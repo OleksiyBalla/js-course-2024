@@ -1,0 +1,45 @@
+button {
+    width: 250px;
+    height: 75px;
+    background-color: rgb(240, 91, 91);
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: red;
+}
+.buttons{
+    display: flex;
+   
+}
+/* _______________________________________________________________ */
+.column1{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 15px;
+}
+.column2{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 15px;
+}
+/* _______________________________________________________________ */
+body {
+}
+/* _______________________________________________________________ */
+p {
+    font-size: 38px;
+}
+/* _______________________________________________________________ */
+.hidden {
+    display: none;
+}
+.color {
+    color: red;
+}
+

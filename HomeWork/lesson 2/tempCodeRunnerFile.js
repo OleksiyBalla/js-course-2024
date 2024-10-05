@@ -1,5 +1,3 @@
-"use strict";
-
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
 const btn3 = document.querySelector("#btn3");
@@ -11,16 +9,14 @@ btn1.addEventListener("click", () => {
     text.classList.remove("color");
     btn2.classList.toggle("hidden");
 });
-
 btn2.addEventListener("click", () => {
     text.classList.add("color");
 });
-
 btn3.addEventListener("click", () => {
     alert(new Date());
 });
-
-btn4.addEventListener("click", () => {
-    let name = prompt("Як вас звати?");
-    alert("Привіт," + name);
-});
+btn4.addEventListener('click', () => {
+    let name = +prompt("Як вас звати?")
+    console.log(typeof(name));
+    alert("Привіт," + name)
+}); 

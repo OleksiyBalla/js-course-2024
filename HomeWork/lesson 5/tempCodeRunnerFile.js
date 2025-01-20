@@ -1,0 +1,1 @@
+ (weight / 100) / Math.pow(height, 2);

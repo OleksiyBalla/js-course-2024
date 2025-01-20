@@ -1,18 +1,37 @@
-const btnSend = document.querySelector("#btnSend");
+// const btnSend = document.querySelector("#btnSend");
 
-btnSend.addEventListener("click", () => {
+// btnSend.addEventListener("click", () => {
+//     const num = parseInt(document.querySelector("#num").value);
+//     let check = num % 2;
+//     let output;
+//     if (isNaN(num)) {
+//         output = "Помилка! Введіть число...";
+//         showResult(output);
+//     } else {
+//         output = check === 0 ? `Число ${num} парне.` : `Число ${num} не парне.`;
+//         showResult(output);
+//     }
+// });
+
+// function showResult(result) {
+//     let output = document.querySelector("#output");
+//     output.innerHTML = result;
+// }
+
+const sendBtn = document.querySelector("#btnSend");
+
+sendBtn.addEventListener("click", function () {
     const num = parseInt(document.querySelector("#num").value);
     let check = num % 2;
-    let output;
+    let result;
     if (isNaN(num)) {
-        output = "Помилка! Введіть число...";
-        showResult(output);
+        result = "Помилка! Введіть число...";
+        showResult(result);
     } else {
-        output = check === 0 ? `Число ${num} парне.` : `Число ${num} не парне.`;
-        showResult(output);
+        result = check === 0 ? `Число ${num} парне.` : `Число ${num} не парне.`;
+        showResult(result);
     }
 });
-
 function showResult(result) {
     let output = document.querySelector("#output");
     output.innerHTML = result;

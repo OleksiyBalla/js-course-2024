@@ -1,23 +1,19 @@
 const day = new Date().getDay();
 
-if (day == 0) {
-    console.log("Неділя");
-}
-if (day == 1) {
-    console.log("Понеділок");
-}
-if (day == 2) {
-    console.log("Вівторок");
-}
-if (day == 3) {
-    console.log("Середа");
-}
-if (day == 4) {
-    console.log("Четвер");
-}
-if (day == 5) {
-    console.log("П'ятниця");
-}
-if (day == 6) {
-    console.log("Субота");
+if (day === 0) {
+    console.log("Sunday");
+} else if (day === 1) {
+    console.log("Monday");
+} else if (day === 2) {
+    log("Tuesday");
+} else if (day === 3) {
+    console.log("Wednesday");
+} else if (day === 4) {
+    console.log("Thursday");
+} else if (day === 5) {
+    console.log("Friday");
+} else if (day === 6) {
+    console.log("Saturday");
+} else {
+    console.log("Error");
 }

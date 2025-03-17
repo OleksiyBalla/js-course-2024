@@ -1,5 +1,14 @@
-let values = [10, 9, -8, 3, 500, 0, 1, -12, 47, -10, 100];
+let cities = ["Paris", "London", "Berlin"];
 
-values = values.map(value => value < 0 ? 0 : value);
-
-values.forEach((value, index) => console.log(`index ${index} = ${value}`));
+// for (let i = 0; i < cities.length; i++) {
+//     const city = cities[i];
+//     console.log(city);
+// }
+for (const prop in cities) {
+    console.log(prop);
+}
+// cities[1] = "ABC";
+// cities.push("Kiev");
+// console.log(cities);
+// console.log(cities[1]);
+// console.log(cities.length);

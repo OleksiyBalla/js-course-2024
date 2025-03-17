@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подія submit</title>
-    <style>
-        .form-group {
-            margin: 4px;
-        }
-
-        .form-group label {
-            width: 75px;
-            display: inline-block;
-        }
-    </style>
-</head>
-
-<body>
-    <form action="https://itvdn.com/ua/catalog" method="POST">
-        <div class="form-group">
-            <label>Запит</label>
-            <input type="text" name="search" />
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Пошук" />
-        </div>
-    </form>
-
-    <script>
-        const form = document.forms[0];
-        // submit - подія відбувається при натисканні на кнопку submit і відправка даних форми на сервер.
-        form.addEventListener("submit", function (event) { 
-            alert("Подія submit");
-            
-            // якщо поле введення порожнє - не надсилаем форму
-            if(form.search.value.length == 0) {
-                event.preventDefault(); // скасування надсилання форми
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Подія submit</title>
+        <style>
+            .form-group {
+                margin: 4px;
             }
-        });
-    </script>
-</body>
 
+            .form-group label {
+                width: 75px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="https://itvdn.com/ua/catalog" method="POST">
+            <div class="form-group">
+                <label>Запит</label>
+                <input type="text" name="search" />
+            </div>
+            <div class="form-group">
+                <label>Запит</label>
+                <input type="text" name="test" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Пошук" />
+            </div>
+        </form>
+
+        <script>
+            //document.forms[0] збирає всі форми на сторінці в масив об'єктів і присвоює свій індекс (тут звернення до першої форми),
+            //document.forms["formName"] - звернення до форми по імені, також повертає об'єкт.
+            const form = document.forms[0];
+            // submit - подія відбувається при натисканні на кнопку submit і відправка даних форми на сервер.
+            form.addEventListener("submit", function (event) {
+                // alert("Подія submit");
+                event.preventDefault(); // якщо поле введення порожнє - не надсилаем форму
+
+                if (form.search.value.trim().length === 0) {
+                    event.preventDefault(); // скасування надсилання форми
+                    return; // перериває виконання
+                }
+                // Перебираємо всі елементи форми
+                // const formData = {};
+                // for (const element of form.elements) {
+                //     if (element.name) {
+                //         formData[element.name] = element.value;
+                //     }
+                // }
+                const formData = {};
+
+                for (const element of form.elements) {
+                    if (element.name) {
+                        formData[element.name] = element.value;
+                    }
+                }
+
+                console.log(formData);
+            });
+        </script>
+    </body>
 </html>

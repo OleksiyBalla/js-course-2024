@@ -1,0 +1,27 @@
+.contact {
+    background-color: lightblue;
+    margin: 30px 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#contactForm lable {
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
+    width: 100px;
+}
+#contactForm input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+#contactForm input:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+#contactForm * {
+    margin-bottom: 5px;
+}

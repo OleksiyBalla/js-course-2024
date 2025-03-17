@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Canvas1</title>
+        <link rel="stylesheet" href="/Duke/Canvas3/style.css" />
+    </head>
+    <body>
+        <h1>Paint here</h1>
+        <p><span>Set Width here</span><input type="text" value="300" onchange="setWidth(this.value)" /></p>
+        <p><span>Set Height here</span><input type="text" value="200" onchange="setHeight(this.value)" /></p>
+        <canvas
+            id="canvas1"
+            onmousedown="startPaint()"
+            onmousemove="doPaint(event.offsetX, event.offsetY)"
+            onmouseup="endPaint()"
+        ></canvas>
+        <p>
+            <span>Brush Color:</span>
+            <input type="color" name="colorInp" id="colorInp" value="#000000" onchange="changeColor(this.value)" />
+        </p>
+        <p>
+            <span>Brush Size:</span>
+            <input
+                type="range"
+                min="1"
+                max="100"
+                name="brushSz"
+                id="brushSz"
+                value="10"
+                onchange="setSize(this.value)"
+            />
+        </p>
+        <input type="button" value="Clear" onclick="clearCanvas()" />
+        <script src="/Duke/Canvas3/script.js"></script>
+    </body>
+</html>

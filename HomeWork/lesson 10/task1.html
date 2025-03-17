@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script id="bookTmpl" type="x-tmpl-mustache">
+            <div class="book">
+                <button id="rmvBtn" onclick="remove({{id}})">Remove book</button>
+                <button id="updBtn" onclick="update({{id}})">Update book</button>
+                <h2>{{ title }}</h2>
+                <p>Author: {{ author }}</p>
+                <p>Year: {{ year }}</p>
+                <p>Genre: {{ genre }}</p>
+            </div>
+        </script>
+
+        <form action="" id="bookForm">
+            <div>
+                <label>Title:</label>
+                <input type="text" pattern="\S.*" title="No spaces at the beginning or end" id="titleInp" required />
+            </div>
+            <div>
+                <label>Author:</label>
+                <input type="text" pattern="\S.*" title="No spaces at the beginning or end" id="authorInp" required />
+            </div>
+            <div>
+                <label>Year:</label>
+                <input
+                    type="text"
+                    id="yearInp"
+                    pattern="\d{4}"
+                    title="Only 4 digits in the range from 0 to 9"
+                    required
+                />
+            </div>
+            <div>
+                <label>Genre:</label>
+                <input type="text" pattern="\S.*" title="No spaces at the beginning or end" id="genreInp" required />
+            </div>
+            <button type="submit">Add book</button>
+        </form>
+
+        <section id="book-list"></section>
+
+        <script src="/node_modules/mustache/mustache.min.js"></script>
+        <script src="./js/model.js"></script>
+        <script src="./js/view.js"></script>
+        <script src="./js/controller.js"></script>
+    </body>
+</html>
+
+<!-- Кастомне вікно вікон для валідації форми!  -->
+
+<!-- <form id="myForm">
+    <input type="text" id="titleInp" pattern="[A-Za-z]{3,}" required />
+    <span class="error"></span>
+    <button type="submit">Надіслати</button>
+</form>
+
+<script>
+    const titleInp = document.querySelector("#titleInp");
+    const errorSpan = document.querySelector(".error");
+
+    titleInp.addEventListener("input", function () {
+        if (!titleInp.validity.valid) {
+            titleInp.setCustomValidity("Введіть хоча б 3 літери (латиниця)");
+            errorSpan.textContent = titleInp.validationMessage;
+        } else {
+            titleInp.setCustomValidity("");
+            errorSpan.textContent = "";
+        }
+    });
+
+    document.querySelector("#myForm").addEventListener("submit", function (e) {
+        if (!titleInp.validity.valid) {
+            e.preventDefault(); // Блокуємо стандартне повідомлення
+        }
+    });
+</script> -->

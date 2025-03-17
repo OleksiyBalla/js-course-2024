@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Створюємо шаблон 'template' для контакту, не відображається та не виконується у верстці V -->
+        <template id="contactTemplate">
+            <div class="contact">
+                <button id="removeBtn" onclick="remove({{id}})">Remove contact</button>
+                <button id="updateBtn">Uodate contact</button>
+                <h2>{{firstName}} {{lastName}}</h2>
+                <p>Phone: {{phone}}</p>
+                <p>Email: {{email}}</p>
+                <p>Description: {{description}}</p>
+            </div>
+        </template>
+
+        <form action="" id="contactForm">
+            <div>
+                <lable>First name:</lable>
+                <input type="text" id="fnInput" />
+            </div>
+            <div>
+                <lable>Last name:</lable>
+                <input type="text" id="lnInput" />
+            </div>
+            <div>
+                <lable>Phone:</lable>
+                <input type="text" id="pInput" />
+            </div>
+            <div>
+                <lable>Email:</lable>
+                <input type="text" id="eInput" />
+            </div>
+            <div>
+                <lable>Description: </lable>
+                <input type="text" id="dInput" />
+            </div>
+            <button type="submit">Add contact</button>
+        </form>
+
+        <section id="contact-list"></section>
+        <!-- Урок 8 (1:35)  .mustache - шаблонізатор, встановлюється 'npm install mustache --save', треба підключати файл 'mustache.min.js' V  -->
+        <script src="/node_modules/mustache/mustache.min.js"></script>
+        <script src="js/model.js"></script>
+        <script src="js/view.js"></script>
+        <script src="js/controller.js"></script>
+    </body>
+</html>

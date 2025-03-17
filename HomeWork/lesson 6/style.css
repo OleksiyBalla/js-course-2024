@@ -1,0 +1,109 @@
+.todo__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    background-color: #fcf8ca;
+    width: 300px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+.items__add-btn {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.items__add-btn:hover {
+    background-color: #f7f7f7;
+}
+.todo__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+.item__title {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #d6f4f5;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+}
+.item__row {
+    display: flex;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    align-items: center;
+    /* border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; */
+}
+.add-task-input {
+    flex: 1 1 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+}
+.item__list-row {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+.item__list-row:not(:last-child) {
+    margin-bottom: 20px;
+}
+.item__list {
+    padding-inline-start: 10px;
+}
+.item__list-item {
+    flex: 1 100%;
+    align-self: center;
+    background-color: #f1edb8;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.item__list-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    bottom: -5px;
+}
+.btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.btn:hover {
+    scale: 1.1;
+}
+.btn-add {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fada82;
+}
+#list-dtn-f {
+    background-color: #82fa8c;
+}
+#list-dtn-r {
+    background-color: #fa8a82;
+}
+.finished {
+    text-decoration: line-through;
+    color: #8c8c8c;
+}

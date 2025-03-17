@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script id="bookTmpl" type="x-tmpl-mustache">
+            <div class="book">
+                <button id="rmvBtn" onclick="remove({{id}})">Remove book</button>
+                <button id="updBtn" onclick="update({{id}})">Update book</button>
+                <h2>{{ title }}</h2>
+                <p>Author: {{ author }}</p>
+                <p>Year: {{ year }}</p>
+                <p>Genre: {{ genre }}</p>
+            </div>
+        </script>
+
+        <form action="" id="bookForm">
+            <div>
+                <label>Title:</label>
+                <input type="text" id="titleInp" />
+            </div>
+            <div>
+                <label>Author:</label>
+                <input type="text" id="authorInp" />
+            </div>
+            <div>
+                <label>Year:</label>
+                <input type="text" id="yearInp" />
+            </div>
+            <div>
+                <label>Genre:</label>
+                <input type="text" id="genreInp" />
+            </div>
+            <button type="submit">Add book</button>
+        </form>
+
+        <section id="book-list"></section>
+
+        <script src="/node_modules/mustache/mustache.min.js"></script>
+        <script src="./js/model.js"></script>
+        <script src="./js/view.js"></script>
+        <script src="./js/controller.js"></script>
+    </body>
+</html>

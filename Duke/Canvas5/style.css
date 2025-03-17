@@ -1,0 +1,9 @@
+canvas {
+    height: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+p {
+    display: flex;
+    gap: 15px;
+}
